@@ -32,13 +32,12 @@ public class Automate_imdb_ratings {
 
         driver.get("https://www.imdb.com/chart/top");
 
-        WebElement highestrated = driver.findElement(By.xpath(" //h3[text()='1. The Shawshank Redemption']"));
+        WebElement highestrated = driver.findElement(By.xpath("//h3[text()='1. The Shawshank Redemption']"));
         System.out.println("Highest rated movie : ");
         System.out.println(highestrated.getText());
 
         List<WebElement> list = driver
-                .findElements(By.xpath(" //*[@id='__next']/main/div/div[3]/section/div/div[2]/div/ul/li["));
-        System.out.println();
+                .findElements(By.xpath("//*[@id='__next']/main/div/div[3]/section/div/div[2]/div/ul/li[250]"));
 
         System.out.println(" Total movies are included in the table: " + list.size());
 
@@ -57,7 +56,6 @@ public class Automate_imdb_ratings {
                 .findElement(By.xpath("//*[@id='__next']/main/div/div[3]/section/div/div[2]/div/ul/li[1]"));
         System.out.println("most recent movie on the list");
         System.out.println(Most_Recent_Movie.getText());
-        System.out.println();
 
         Thread.sleep(2000);
 
@@ -67,7 +65,6 @@ public class Automate_imdb_ratings {
                 .findElement(By.xpath("//*[@id=\"__next\"]/main/div/div[3]/section/div/div[2]/div/ul/li[1]"));
         System.out.println("movie has the most user ratings");
         System.out.println(MostUserRating.getText());
-        System.out.println();
 
     }
 
